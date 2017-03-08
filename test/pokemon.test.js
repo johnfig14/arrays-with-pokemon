@@ -7,6 +7,7 @@ Test(`all()`, async t => {
 });
 
 Test(`startsWith()`, async t => {
-  const response = await Pokemon.startsWith('Bu');
+  const response = await Pokemon.startsWith('bu');
+  console.log(response);
   t.truthy(response instanceof Array);
 });
