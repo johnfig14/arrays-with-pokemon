@@ -5,7 +5,13 @@ const api = new PokemonApi();
 export default {
 
   async all() {
-    return await api.getPokemonsList();
+    const response = await api.getPokemonsList();
+    return response.results;
+  },
+
+  async startsWith(name) {
+    const pokemons = await this.all();
+    return pokemons.filter(pokemon => pokemon.name.startsWith(name));
   }
 
 }

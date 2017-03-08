@@ -3,6 +3,10 @@ import Pokemon from '../src';
 
 Test(`all()`, async t => {
   const response = await Pokemon.all();
-  console.log(response);
-  t.truthy(response.results);
+  t.truthy(response instanceof Array);
+});
+
+Test(`startsWith()`, async t => {
+  const response = await Pokemon.startsWith('Bu');
+  t.truthy(response instanceof Array);
 });
