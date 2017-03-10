@@ -50,7 +50,11 @@ export default {
 
 
   async biggestToSmallest(array) {
+    return await [...array].sort((a, b) => b - a);
+  },
 
+  async removeDuplicates(array) {
+    return await [...new Set(array)];
   },
 
   /**

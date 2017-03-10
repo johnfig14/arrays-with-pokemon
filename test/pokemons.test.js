@@ -38,9 +38,18 @@ Test(`addToMiddle([], index, value)`, async t => {
 });
 
 Test(`biggestToSmallest([])`, async t => {
+  const original = [1,2,3,4,5];
   const results = await Pokemons.biggestToSmallest([1,2,3,4,5]);
 
+  t.deepEqual([1,2,3,4,5], original);
   t.deepEqual([5,4,3,2,1], results);
-  t.deepEqual([1,2,3,4,5], results)
+});
 
+Test(`removeDuplicates([])`, async t => {
+  const original = [1,1,2,2,3,3];
+  const results = await Pokemons.removeDuplicates(original);
+  
+  console.log(results);
+  t.deepEqual([1,1,2,2,3,3], original);
+  t.deepEqual([1,2,3], results);
 });
