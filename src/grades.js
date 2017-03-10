@@ -23,5 +23,27 @@ export default {
   },
   async failingGrades() {
     return await grades.filter(grade => grade <= 75);
+  },
+
+async addMoreCurveToGrade(grades = []) {
+    return await grades.map(score => {
+      return {
+        score : +80
+      };
+    });
+  },
+  async failingGrades() {
+    return await grades.filter(grade => grade <= 75);
+  },
+
+  async subtractCurveToGrades(grades = []) {
+    return await grades.map(score => {
+      return {
+        score : -20
+      };
+    });
+  },
+  async failingGrades() {
+    return await grades.filter(grade => grade <= 75);
   }
-}
+};
