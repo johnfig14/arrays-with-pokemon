@@ -30,3 +30,17 @@ Test(`addToBeginning([], 'a')`, async t => {
   console.log(results);
   t.truthy(results.length === 1);
 });
+
+
+Test(`addToMiddle([], index, value)`, async t => {
+  const results = await Pokemons.addToMiddle([1, 2, 3, 4], 2, 5);
+  t.deepEqual([1, 2, 3, 5, 4], results);
+});
+
+Test(`biggestToSmallest([])`, async t => {
+  const results = await Pokemons.biggestToSmallest([1,2,3,4,5]);
+
+  t.deepEqual([5,4,3,2,1], results);
+  t.deepEqual([1,2,3,4,5], results)
+
+});

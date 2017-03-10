@@ -36,11 +36,21 @@ export default {
   },
 
   async addToEnding(array = [], value) {
-    // Do stuff
+    return await [...array, value];
   },
 
   async addToMiddle(array, startingIndex, value) {
-    // Do stuff
+    const index = startingIndex + 1;
+
+    const first = array.slice(0, index);
+    const second = array.slice(index);
+
+    return await [...first, value, ...second];
+  },
+
+
+  async biggestToSmallest(array) {
+
   },
 
   /**
