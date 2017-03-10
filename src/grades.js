@@ -15,6 +15,13 @@ export default {
    * @returns {Promise.<void>}
    */
   async addCurveToGrade(grades = []) {
-    
+    return await grades.map(score => {
+      return {
+        score : +60
+      };
+    });
+  },
+  async failingGrades() {
+    return await grades.filter(grade => grade <= 75);
   }
 }
